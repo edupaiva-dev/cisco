@@ -13,3 +13,23 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
     display: none; /* Para Chrome, Safari y Opera */
   }
+
+/* Smooth transitions for images */
+#img_main {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Details smooth open */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary ~ * {
+  animation: sweep .3s ease-in-out;
+}
+@keyframes sweep {
+  0%    {opacity: 0; margin-top: -10px;}
+  100%  {opacity: 1; margin-top: 0px;}
+}
